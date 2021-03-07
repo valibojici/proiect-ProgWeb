@@ -101,65 +101,80 @@
  
 
 #rooms-main-container{
-    width: 80%;
     padding: 20px;
     margin-top: 20px;
     margin-left: 10%;
+    margin-right: 10%;
 
-    background-color: rgba(255, 255, 255, 0.541);
-
+    border-radius: 40px;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .rooms-inner-container{
-    width: 100%;
-    background: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.rooms-inner-container img{
-    height: 100%;
-    width: 300px;
-}
-
-.rooms-inner-container h2,p{
     font-family: "lato", sans-serif;
-    margin: 10px;
-}
-
-
-.rooms-info-container{
-    height: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+
+    background: white;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
     
-}
-
-.rooms-info-inner{
-    display: flex;
-    width: inherit;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+    width: 25%;
     padding: 20px;
-    justify-content: space-between;
+    margin: 20px 10px;
 }
- 
 
-.rooms-info-inner button{
-    background: rgba(109, 168, 97, 0.863);
-    height: 50px;
-    width: 40%;
-
-    font-family: "lato", sans-serif;
-    font-size: 1.25rem;
-    color : white;
-
-    align-self: center;
+.rooms-inner-container > *{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
- 
+
+.rooms-inner-container hr{
+    width: 100%; 
+}
+
+.rooms-inner-container img{
+    width: 100%;
+}
+
+.rooms-inner-container h2{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+@media(max-width : 1280px)
+{
+    .rooms-inner-container{
+        width: 35%;
+    }
+}
+
+@media(max-width : 768px)
+{
+    .rooms-inner-container{
+        width: 100%;
+    }
+}
+
+
+
+
+/* 
+HTML + CSS (10 puncte) - termen saptamana 5 (17-18 martie)
+    x fisiere separate de HTML si CSS (0.5 puncte)
+    x folosirea cu sens a cel putin 4 tag-uri semantice (2 puncte)
+    x aplicarea stilului folosind clase si id-uri pe cat mai multe elemente din pagina (0.5)
+    x layout pe coloane folosind flexbox si/sau grid (2 puncte)
+    x sa aveti cel putin 2 pagini legate intre ele prin ancora (1 punct)
+    - site-ul sa fie responsive pentru urmatoarele dimenstiuni: latime mai mica de 768px, latime intre 768px si 1280px, latime mai mare de 1280px (4 puncte)
+*/
