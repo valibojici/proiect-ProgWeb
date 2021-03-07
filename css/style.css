@@ -1,3 +1,103 @@
-body{
-    background-color: darkgray;
+*{
+    margin : 0px;
+    padding :  0px;
 }
+ 
+
+#bg{
+    z-index: -100;
+    position: fixed;
+    object-fit: cover;
+    left: 0px;
+    top : 0px;
+    height: 100%;
+    min-width: 100%;
+}
+
+#nav-container{
+    list-style-type: none;
+    background-color: rgba(150,150,150,0.4);
+
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+ 
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#nav-container li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+#nav-container li:hover{
+    background-color: rgba(255, 191, 166, 0.527);
+    border-bottom: 5px solid rgb(255, 191, 166);
+    width: 100%;
+    text-align: center;
+}
+
+#nav-container a{
+    text-decoration: none;
+    color : white;
+    /* border: 1px solid red; */
+    padding: 5%;
+}
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+
+    margin: 100px;
+    
+}
+
+#hotel-name{
+    font-size: 9vw;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "lato", sans-serif;
+    letter-spacing: 5px;
+
+    color : whitesmoke;
+    text-shadow: 10px 10px rgba(185, 139, 118, 0.603);
+}
+
+.button{
+    width: 20%;
+
+    font-size: 2vw;
+    padding: 20px;
+    margin-top: 20px;
+
+    background: rgba(255, 38, 0, 0.774);
+    border-radius: 15px;
+    border-style: none;
+
+    border-right: 10px solid rgb(209, 43, 1);
+    border-bottom: 10px solid rgb(126, 25, 0);
+
+
+    font-weight: bold;
+    font-style: italic;
+    font-family: "lato", sans-serif;
+
+    letter-spacing: 3px;
+
+    color : rgb(255, 255, 255);
+}
+
+.button:active{
+    background: rgba(207, 0, 0, 0.507);
+}
+ 
