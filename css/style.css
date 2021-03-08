@@ -2,7 +2,7 @@
     margin : 0px;
     padding :  0px;
 }
- 
+
 
 #bg{
     z-index: -100;
@@ -13,8 +13,10 @@
     height: 100%;
     min-width: 100%;
 }
+ 
 
 #nav-container{
+    
     list-style-type: none;
     background-color: rgba(150,150,150,0.4);
 
@@ -45,10 +47,10 @@
     text-align: center;
 }
 
-#nav-container a{
+.nav-menu{
     text-decoration: none;
     color : white;
-    padding: 5%;
+ 
 }
 
 #home-main-container{
@@ -61,29 +63,29 @@
 }
 
 #hotel-name{
-    font-size: 9vw;
+    font-size: 10rem;
     font-weight: bold;
     font-style: italic;
     font-family: "lato", sans-serif;
     letter-spacing: 5px;
 
     color : whitesmoke;
-    text-shadow: 10px 10px rgba(185, 139, 118, 0.603);
+    text-shadow: 8px 8px rgba(185, 139, 118, 0.603);
 }
 
 .book-button{
     width: 20%;
 
-    font-size: 2vw;
+    font-size: 2rem;
     padding: 20px;
     margin-top: 20px;
 
-    background: rgba(255, 38, 0, 0.774);
+    background: rgba(230, 66, 16, 0.61);
     border-radius: 15px;
     border-style: none;
 
-    border-right: 10px solid rgb(209, 43, 1);
-    border-bottom: 10px solid rgb(126, 25, 0);
+    border-right: 10px solid rgba(201, 58, 22, 0.61);
+    border-bottom: 10px solid rgba(146, 38, 11, 0.61);
 
 
     font-weight: bold;
@@ -96,17 +98,22 @@
 }
 
 .book-button:active{
-    background: rgba(207, 0, 0, 0.507);
+    background: rgba(151, 3, 3, 0.678);
+     
 }
  
+.rooms-book-button{
+    display: block;
+    margin: 30px auto;   
+    
+}
+
 
 #rooms-main-container{
     padding: 20px;
     margin-top: 20px;
     margin-left: 10%;
     margin-right: 10%;
-
-    border-radius: 40px;
     
     display: flex;
     flex-direction: row;
@@ -116,12 +123,14 @@
 
 .rooms-inner-container{
     font-family: "lato", sans-serif;
+
+    font-size: 1.2rem;
     
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    background: white;
+    background:rgb(255, 255, 255);
     border-bottom-left-radius: 40px;
     border-top-right-radius: 40px;
     
@@ -135,7 +144,7 @@
 
 .rooms-inner-container > *{
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    
 }
 
 .rooms-inner-container hr{
@@ -152,17 +161,86 @@
     font-family: 'Dancing Script', cursive;
 }
 
-@media(max-width : 1280px)
+
+
+@media (max-width : 1280px)
 {
+    #rooms-main-container{
+        padding: 0px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     .rooms-inner-container{
-        width: 35%;
+        width: 40%;
+    }
+
+    #hotel-name{
+        font-size: 5.5rem;
+        text-align: center;
+    }
+
+    .book-button{
+        width: 300px;
     }
 }
 
-@media(max-width : 768px)
+@media (max-width : 768px)
 {
+    #nav-container {
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+    }
+
+    #nav-container li{
+        padding: 0px;
+        margin: 0px;
+        font-size: 2rem;
+    }
+
+ 
+
+    #home-main-container{
+        width: 100%;
+        height: 50vh;
+        margin: 0px;
+        padding: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #rooms-main-container{
+        padding: 0px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     .rooms-inner-container{
         width: 100%;
+       font-size: 1rem;
+    }
+
+    .rooms-inner-container h2{
+        font-size: 2rem;
+    }
+
+    #hotel-name{
+        text-align: center;
+        font-size: 4rem;
+        margin: 30px 0;
+        margin: 10px;
+    }
+
+    .book-button{
+        width: 80%;
+        height: 50px;
+        font-size: 1.35rem;
+        padding: 0px;
+        background :rgba(221, 44, 20, 0.651);
+        border: none;
     }
 }
 
