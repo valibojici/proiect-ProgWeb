@@ -136,6 +136,7 @@
     align-items: center;
 
     background:rgb(255, 255, 255);
+    box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.26);
     border-bottom-left-radius: 40px;
     border-top-right-radius: 40px;
     
@@ -306,7 +307,8 @@
 
     .rooms-inner-container{
         width: 100%;
-       font-size: 1rem;
+        font-size: 1rem;
+        box-shadow: none;
     }
 
     .rooms-inner-container h2{
