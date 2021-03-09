@@ -132,6 +132,7 @@
     
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
     background:rgb(255, 255, 255);
@@ -143,29 +144,84 @@
     
     width: 25%;
     padding: 20px;
-    margin: 20px 10px;
+    margin: 20px 5px;
 }
 
 .rooms-inner-container > *{
     margin-bottom: 10px;
-    
-}
-
-.rooms-inner-container hr{
-    width: 100%; 
-}
-
-.rooms-inner-container img{
     width: 100%;
 }
-
+ 
 .rooms-inner-container h2{
+    text-align: center;
     font-size: 3rem;
     font-weight: bold;
     font-family: 'Dancing Script', cursive;
 }
 
+.room-services{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    justify-content: flex-start;
+}
 
+.room-services > *{
+    width: 20%;
+    font-size: 0.7rem;
+    text-align: center;
+    margin: 0px 3px;
+}
+
+#photos-main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.photos-inner-container{
+    border:15px solid rgba(255, 255, 255, 0.719);
+    width: 25%;
+    margin: 20px;
+}
+
+.photos-inner-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+
+#footer-container{
+    overflow: hidden;
+    height: 100px;
+    background:rgba(46, 34, 28, 0.945);
+    padding: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#footer-container > *{
+    
+    margin: 0 20px;
+}
+
+#footer-container h2{
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    top: 35px;
+    font-size: 2.5rem;
+}
+
+#contact-info{
+    font-size: 0.8rem;
+    line-height: 30px;
+    font-family: "lato", sans-serif;
+}
 
 @media (max-width : 1280px)
 {
@@ -187,6 +243,10 @@
 
     .book-button{
         width: 300px;
+    }
+
+    .photos-inner-container{
+        width: 40%;
     }
 }
 
@@ -262,11 +322,38 @@
 
     .book-button{
         width: 80%;
-        height: 50px;
+        height: 70px;
         font-size: 1.4rem;
         padding: 0px;
         background :rgba(221, 44, 20, 0.651);
         border: none;
+    }
+
+    .photos-inner-container{
+        border:10px solid rgb(255, 255, 255);
+        width: 80%;
+        margin: 20px;
+    }
+
+
+    #footer-container > *{
+    
+        margin: 0 20px;
+    }
+    
+    #footer-container h2{
+        font-family: 'Dancing Script', cursive;
+        position: relative;
+        top: 30px;
+        font-size: 1.2rem;
+    }
+    
+    #contact-info{
+        position: relative;
+        top: 10px;
+        font-size: 0.7rem;
+        line-height: 20px;
+        font-family: "lato", sans-serif;
     }
 }
 
