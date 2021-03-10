@@ -2,6 +2,13 @@
     margin : 0px;
     padding :  0px;
 }
+ 
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
 
 
 #bg{
@@ -13,7 +20,6 @@
     height: 100%;
     min-width: 100%;
 }
- 
 
 
 #nav-container{
@@ -62,8 +68,9 @@
     flex-direction: column;
     
     align-items: flex-start;
-
+    position: relative;
     margin: 100px;    
+    bottom: 40vh;
 }
 
 #hotel-name{
@@ -178,6 +185,53 @@
     width: 100%;
     object-fit: contain;
 }
+
+#amenities-main-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.amenities-inner-container{
+    display: flex;
+    
+    flex-direction: column;
+    margin: 40px;
+    
+    background: whitesmoke;
+    height: auto;
+}
+
+.amenities-inner-container:nth-of-type(2n) > .info-container{
+    flex-direction: row-reverse;
+}
+
+.amenities-inner-container > h2{
+    font-size: 4rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+ 
+.info-container{
+    display: flex;
+    flex-direction: row;
+    color : black;
+    padding: 20px;
+}
+
+.info-container > *{
+    padding: 5px;
+    font-size: 1.4rem;
+}
+
+.info-container > img{
+    width: 400px;
+    object-fit: cover;
+ 
+}
+
+
  
 #photos-main-container{
     display: flex;
@@ -258,6 +312,7 @@
 
 @media (max-width : 768px)
 {
+ 
     #bars-menu{
         display: flex;
         display: none;
@@ -270,6 +325,8 @@
     #nav-container{
         flex-direction: column;
         height: auto;
+       
+        font-size: 2rem;
     }
 
     #nav-container li{
@@ -295,12 +352,19 @@
     */
 
     #home-main-container{
+        position: static;
         width: 100%;
-        height: 50vh;
-        margin: 20px 0px;
+        margin: 0px 0px;
         padding: 0px;
+        margin-bottom: auto;
+        margin-top: 20px;
+
         justify-content: flex-start;
         align-items: center;
+    }
+
+    #hotel-name{
+        text-shadow: 4px 4px rgba(185, 139, 118, 0.603);
     }
  
     #rooms-main-container{
@@ -345,8 +409,7 @@
         width: 80%;
         margin: 20px;
     }
-
-
+ 
     #footer-container > *{
         margin: 0 20px;
     }
@@ -366,16 +429,4 @@
         font-family: "lato", sans-serif;
     }
 }
-
-
-
-
-/* 
-HTML + CSS (10 puncte) - termen saptamana 5 (17-18 martie)
-    x fisiere separate de HTML si CSS (0.5 puncte)
-    x folosirea cu sens a cel putin 4 tag-uri semantice (2 puncte)
-    x aplicarea stilului folosind clase si id-uri pe cat mai multe elemente din pagina (0.5)
-    x layout pe coloane folosind flexbox si/sau grid (2 puncte)
-    x sa aveti cel putin 2 pagini legate intre ele prin ancora (1 punct)
-    - site-ul sa fie responsive pentru urmatoarele dimenstiuni: latime mai mica de 768px, latime intre 768px si 1280px, latime mai mare de 1280px (4 puncte)
-*/
+ 
