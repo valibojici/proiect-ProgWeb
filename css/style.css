@@ -167,13 +167,18 @@
     justify-content: flex-start;
 }
 
-.room-services > *{
+.room-services > li{
     width: 20%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-align: center;
-    margin: 0px 3px;
+    padding: 0px 3px;
 }
-
+ 
+.room-services img{
+    width: 100%;
+    object-fit: contain;
+}
+ 
 #photos-main-container{
     display: flex;
     flex-direction: row;
@@ -315,6 +320,10 @@
         font-size: 2rem;
     }
 
+    .room-services img{
+        width: 50%;
+    }
+
     #hotel-name{
         text-align: center;
         font-size: 4rem;
@@ -339,7 +348,6 @@
 
 
     #footer-container > *{
-    
         margin: 0 20px;
     }
     
