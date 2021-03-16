@@ -84,7 +84,7 @@ body{
     padding: 20px;
     margin-top: 20px;
 
-    background: rgba(230, 66, 16, 0.747);
+    background: rgba(230, 41, 16, 0.747);
     border-radius: 15px;
     border-style: none;
 
@@ -294,6 +294,57 @@ body{
     object-fit: cover;
 }
  
+#book-main-container{
+    margin-bottom: auto;
+    margin-top: 100px;
+}
+ 
+#book-main-container > form{
+    width: 60%;
+    padding: 30px;  
+    margin-left: auto;
+    margin-right: auto;
+    background:rgba(80, 60, 60, 0.664);
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.input-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#check-in, #check-out,#guests{
+    height: 30px;
+    border: none;
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    user-select: none;
+}
+ 
+.form-label{
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+#form-button{
+    height: 70px;
+    width: 200px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: "Lato", sans-serif;
+    color: whitesmoke;
+    background: rgba(145, 21, 21, 0.877);
+    border: none;
+}
+
 
 #footer-container{
     overflow: hidden;
@@ -321,7 +372,7 @@ body{
 #contact-info{
     font-size: 0.8rem;
     line-height: 30px;
-    font-family: "lato", sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 @media (max-width : 1280px)
@@ -383,6 +434,18 @@ body{
         font-size: 1rem;
     }
 
+    #book-main-container > form{
+        width: 80%;
+    }
+
+    .input-container{
+        font-size: 1rem;
+    }
+
+    #form-button{
+        font-size: 1.2rem;
+    }
+
     .photos-inner-container{
         width: 40%;
     }
@@ -390,7 +453,6 @@ body{
 
 @media (max-width : 768px)
 {
- 
     #bars-menu{
         display: flex;
         display: none;
@@ -415,20 +477,7 @@ body{
     #nav-container li:hover{
         border: none;
     }
-
-    /* 
-    #nav-container {
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 70%;
-        padding-right: 30px;
-        height: 100vh;
-        background: rgba(10, 5, 5, 0.808);
-        display: none;
-    } 
-    */
-
+ 
     #home-main-container{
         position: static;
         width: 100%;
@@ -527,6 +576,28 @@ body{
         position: relative;
         top: 30px;
         font-size: 1.2rem;
+    }
+
+    #book-main-container > form{
+        flex-wrap: wrap;
+    }
+    
+    .form-label{
+        font-size: 1rem;
+    }
+
+    .input-container{
+        font-size: 1rem;
+    }
+
+    #check-in, #check-out, #guests{
+        font-size: 1rem;
+    }
+
+
+    #form-button{
+        margin-top: 50px;
+        width: 80%;
     }
     
     #contact-info{
