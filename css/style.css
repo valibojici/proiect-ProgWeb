@@ -4,30 +4,37 @@
 }
  
 body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-
     background-image: url("../img/view.png");
     background-size: cover;
     background-attachment: fixed;
 }
+
+#page-container{
+    min-height: calc(100vh - 100px);
+    padding-bottom: 100px;
+    position: relative;
+}
+
+#page-content-container{
+    /* height: 0px; */
+    display: none;
+}
  
 
 #nav-container{
-    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    height: 80px;
+
     list-style-type: none;
     background-color: rgba(150,150,150,0.4);
 
     font-family: 'Dancing Script', cursive;
     font-size: 2.3rem;
     font-weight: bold;
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 #nav-container li{
@@ -42,18 +49,12 @@ body{
     background-color: rgba(255, 191, 166, 0.527);
     border-bottom: 5px solid rgb(255, 191, 166);
     transition: border 150ms ease 0s;
-    width: 100%;
     text-align: center;
 }
 
 .nav-menu{
     text-decoration: none;
     color : white;
- 
-}
-
-#bars-menu{
-    display: none;
 }
 
 #home-main-container{
@@ -91,7 +92,6 @@ body{
     border-right: 10px solid rgba(201, 58, 22, 0.61);
     border-bottom: 10px solid rgba(146, 38, 11, 0.61);
 
-
     font-weight: bold;
     font-style: italic;
     font-family: "lato", sans-serif;
@@ -109,35 +109,33 @@ body{
 }
  
 .rooms-book-button{
-    display: block;
-    margin: 30px auto;   
-    
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;   
 }
 
-
 #rooms-main-container{
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
+    padding: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .rooms-inner-container{
-    font-family: "Lato", sans-serif;
-
-    font-size: 1.2rem;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
-    background:rgb(255, 255, 255);
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    
+    background:rgba(199, 184, 184, 0.822);
     box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.26);
     border-bottom-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -152,7 +150,12 @@ body{
 
 .rooms-inner-container > *{
     margin-bottom: 10px;
+}
+
+.room-image{
+    height: max(200px, 40vh);
     width: 100%;
+    object-fit: cover;   
 }
  
 .rooms-inner-container h2{
@@ -164,9 +167,10 @@ body{
 
 .room-services{
     display: flex;
+    justify-content: flex-start;
+
     width: 100%;
     list-style-type: none;
-    justify-content: flex-start;
 }
 
 .room-services > li{
@@ -193,16 +197,15 @@ body{
 
 .amenities-inner-container{
     position: relative;
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     height: 1000px;
     margin: 40px 0px;
      
     border-right: 10px solid whitesmoke;
     border-bottom:10px solid whitesmoke;
- 
-
-    display: flex;
-    flex-direction: column;
 }
 
 .amenities-inner-container > img{
@@ -212,19 +215,17 @@ body{
 }
  
 .info-container{
-    width: 50%;
-    height: auto;
-    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
 
     position: absolute;
     right: 5%;
     bottom: 10%;
-    
+
+    width: 50%;
+    padding: 30px 0px;
     border-radius: 20px;
-    
     font-family: "Lato", sans-serif;
-    display: flex;
-    flex-direction: column;
 }
  
 .info-container > h2{
@@ -345,12 +346,31 @@ body{
     border: none;
 }
 
+#gallery-main-container{
+    margin-top: 0;
+    height: 100%;
+    border: 1px solid red;
+}
+
+#gallery-inner-container{
+    width: 50%;
+    height: 300px;
+}
+
+#gallery-img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 
 #footer-container{
-    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
     height: 100px;
     background:rgba(46, 34, 28, 0.945);
-    padding: 5px;
+    padding: 5px 0px;
     color: white;
     display: flex;
     justify-content: center;
@@ -358,20 +378,18 @@ body{
 }
 
 #footer-container > *{
-    
-    margin: 0 20px;
+    margin: 0px 20px;
+    align-self: center;
 }
 
 #footer-container h2{
     font-family: 'Dancing Script', cursive;
-    position: relative;
-    top: 35px;
     font-size: 2.5rem;
 }
 
 #contact-info{
-    font-size: 0.8rem;
-    line-height: 30px;
+    font-size: 0.9rem;
+    line-height: 20px;
     font-family: "Lato", sans-serif;
 }
 
@@ -501,8 +519,8 @@ body{
     #rooms-main-container{
         padding: 0px;
         width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: auto;
+        margin-right: auto;;
     }
 
     .rooms-inner-container{
@@ -566,16 +584,13 @@ body{
         width: 80%;
         margin: 20px;
     }
- 
-    #footer-container > *{
-        margin: 0 20px;
-    }
-    
+
     #footer-container h2{
-        font-family: 'Dancing Script', cursive;
-        position: relative;
-        top: 30px;
-        font-size: 1.2rem;
+        font-size: 2rem;
+    }
+
+    #contact-info{
+        font-size: 0.7rem;
     }
 
     #book-main-container > form{
@@ -600,12 +615,5 @@ body{
         width: 80%;
     }
     
-    #contact-info {
-        position: relative;
-        top: 10px;
-        font-size: 0.7rem;
-        line-height: 20px;
-        font-family: "lato", sans-serif;
-    }
 }
  
