@@ -59,6 +59,10 @@ body{
     background-color: rgba(255, 191, 166, 0.527);
 }
 
+.button:hover{
+    cursor:pointer;
+}
+
 #home-main-container{
     display: flex;
     flex-direction: column;
@@ -87,7 +91,7 @@ body{
     padding: 20px;
     margin-top: 20px;
 
-    background: rgba(230, 41, 16, 0.747);
+    background: rgb(199, 24, 1);
     border-radius: 15px;
     border-style: none;
 
@@ -103,10 +107,16 @@ body{
     color : rgb(255, 255, 255);
     text-decoration: none;
     text-align: center;
+
+    animation: pulse 2s ease 0s infinite alternate-reverse;
+    position: sticky;
+    top: 30px;
 }
 
+
 .book-button:hover{
-    background: rgba(250, 9, 9, 0.678);    
+    animation: none;
+    background: rgb(187, 22, 22);    
 }
  
 .rooms-book-button{
@@ -283,26 +293,66 @@ body{
     transform: skewY(-10deg);
     padding: 20px;
 }
-
-
-#photos-main-container{
+ 
+#gallery-inner-container{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-content: center;
+    width: 90%;
+    margin: 50px auto;
+}
+ 
+.gallery-img{
+    width: 25%;
+    height: auto;
+    margin: 20px;
+    object-fit: cover; 
+    border: 10px solid whitesmoke;
+}
+ 
+
+
+
+#contact-main-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px
 }
 
-.photos-inner-container{
-    border:15px solid rgba(255, 255, 255, 0.719);
-    width: 25%;
+.contact-inner-container{
+    margin: 40px 40px;
+    width: 40%;
+    background: rgba(36, 24, 24, 0.801);
+    border-radius: 30px;
+    color: whitesmoke;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contact-info-container > h2,p{
+    font-size: 1.5rem;
     margin: 20px;
 }
 
-.photos-inner-container img{
+.contact-info-container > h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    
+}
+
+.contact-info-container > hr{
+    width: 40%;
+    background-color: rgba(119, 61, 53, 0.466);
+    border: none;
+    height: 3px;
+}
+ 
+#google-map{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border-radius: 30px;
 }
  
 #book-main-container{
@@ -352,67 +402,73 @@ body{
     font-family: "Lato", sans-serif;
     color: whitesmoke;
     background: rgba(145, 21, 21, 0.877);
-    border: none;
-}
- 
-#gallery-inner-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 90%;
-    margin: 50px auto;
-}
- 
-.gallery-img{
-    width: 25%;
-    height: auto;
-    margin: 20px;
-    object-fit: cover; 
-    border: 10px solid whitesmoke;
-}
-
-#contact-main-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px
-}
-
-.contact-inner-container{
-    margin: 40px 40px;
-    width: 40%;
-    background: rgba(36, 24, 24, 0.801);
-    border-radius: 30px;
-    color: whitesmoke;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.contact-info-container > h2,p{
-    font-size: 1.5rem;
-    margin: 20px;
-}
-
-.contact-info-container > h2{
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    border-left: none;
+    border-top: none;
+    border-right: 5px solid rgba(168, 31, 31, 0.877);
+    border-bottom: 5px solid rgba(94, 16, 16, 0.877);
     
 }
 
-.contact-info-container > hr{
-    width: 40%;
-    background-color: rgba(119, 61, 53, 0.466);
-    border: none;
-    height: 3px;
+#book-results-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.book-results-inner{
+    color: whitesmoke;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background:rgba(32, 16, 13, 0.836) ;
 }
  
-#google-map{
-    width: 100%;
+#book-results-container figure{
     height: 100%;
-    border-radius: 30px;
+    width: 30%;
 }
- 
+
+#book-results-container img{
+    width: 90%;
+    border: 5px solid rgb(180, 180, 180);
+    object-fit: cover;
+}
+
+#book-results-container figcaption{
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.book-details{
+    width: 30%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+
+    font-size: 1.3rem;
+}
+
+.order-room-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgba(158, 31, 29, 0.938);
+    border-bottom: 5px solid rgba(73, 7, 5, 0.562);
+    border-right: 5px solid rgba(167, 61, 57, 0.774);
+    width: 200px;
+    height: 60px;
+     
+}
 
 #footer-container{
     position: absolute;
@@ -621,6 +677,7 @@ body{
         padding: 20px 0px;
         background :rgba(221, 43, 20, 0.822);
         border: none;
+        animation: none;
     }
  
     .amenities-inner-container:nth-of-type(2n) > .info-container{
@@ -727,3 +784,11 @@ body{
     
 }
  
+@keyframes pulse{
+    0%{
+        /* background: rgb(179, 33, 14); */
+    }
+    100%{
+        background: rgb(155, 28, 12);
+    }
+}
