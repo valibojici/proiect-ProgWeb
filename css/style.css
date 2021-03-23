@@ -331,6 +331,10 @@ body{
     justify-content: space-evenly;
 }
 
+.contact-inner-container:nth-of-type(2){
+    padding: 20px;
+}
+
 .contact-info-container > h2,p{
     font-size: 1.5rem;
     margin: 20px;
