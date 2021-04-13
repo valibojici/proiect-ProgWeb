@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet"> 
+    <script src="../js/gallery.js" defer></script>
 </head>
 
 <body>
@@ -21,8 +22,8 @@
             </ul>
         </nav>
         <div class="page-content-container" id="gallery-main-container">
-            <div class="gallery-button"></div>
-            <div id="gallery-inner-container">          
+            
+            <!-- <div id="gallery-inner-container">          
                 <img src="../img/photos/photo1.png" class="gallery-img" alt="gallery-img">
                 <img src="../img/photos/photo2.png" class="gallery-img" alt="gallery-img">
                 <img src="../img/photos/photo3.png" class="gallery-img" alt="gallery-img">
@@ -32,8 +33,16 @@
                 <img src="../img/photos/photo7.png" class="gallery-img" alt="gallery-img">
                 <img src="../img/photos/photo8.png" class="gallery-img" alt="gallery-img">
                 <img src="../img/photos/photo9.png" class="gallery-img" alt="gallery-img">
+            </div> -->
+            <div id="gallery-inner-container">
+                <div class="gallery-button gallery-button-left"> <span><</span> </div>
+                <div id='slide'>
+                    <img src='../img/photos/photo1.png' class ='gallery-img' id = "gallery-img-top">
+                    <img src='../img/photos/photo2.png' class ='gallery-img' id = "gallery-img-bottom">
+                </div>
+                <div class="gallery-button gallery-button-right"> <span>></span></div>
             </div>
-            <div class="gallery-button"></div>
+            
         </div>
         <footer>
             <div id="footer-container">
