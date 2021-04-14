@@ -3,15 +3,12 @@ const leftBtn = document.getElementById('gallery-button-left');
 const rightBtn = document.getElementById('gallery-button-right');
 const imgWidth = gal_img_container.getBoundingClientRect().width;
 
-
+const gal_btns_container = document.getElementById('gallery-buttons-container');
+const buttons = document.getElementsByClassName('gallery-circle');
 
 let imgs = []
-let imgIndex = 0;
-
-async function slide(pixels){
-    gal_img_container.style.transform = 'translateX(' + pixels + 'px)';
-}
-
+let imgIndex = 1;
+let btnIndex = 0;
 
 for(let i = 1;i <= 6; ++i){
     let img = document.createElement('img');
@@ -27,35 +24,66 @@ imgs.push(firstImg);
 imgs.unshift(lastImg);
 
 
-console.log(imgs);
-
 for(let img of imgs){
     gal_img_container.appendChild(img.cloneNode(true));
 }
- 
-imgs = document.querySelectorAll('.gallery-img');
+
+for(let i=0; i<imgs.length - 2; ++i){
+    let circle = document.createElement('div');
+    circle.classList.add('gallery-circle');
+    gal_btns_container.appendChild(circle);
+}
+
+gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
+buttons[0].classList.toggle('gallery-circle-active');
 
 rightBtn.addEventListener('click', event =>{
-    
-    imgIndex++;
-    gal_img_container.style.transition = 'transform 0.4s';
-        slide(-imgIndex*imgWidth);
+    if(imgIndex < imgs.length - 1){
+        imgIndex++;
 
-    console.log(imgIndex-1, imgIndex);
-    if(imgIndex == imgs.length-1)
-    {
-        imgIndex = 1;
-        gal_img_container.style.transition = 'none';
-        slide(-imgIndex*imgWidth);
-        //gal_img_container.style.transition = 'transform 0.4s';
+        btnIndex++;
+        if(btnIndex == buttons.length)
+            btnIndex = 0;
+        
+        for(let button of buttons)
+            button.classList.remove('gallery-circle-active');
+        buttons[btnIndex].classList.toggle('gallery-circle-active');
     }
-    
-    
+        
+    gal_img_container.style.transition = 'transform 0.3s ease-out';
+    gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
 });
 
 leftBtn.addEventListener('click', event =>{
-    gal_img_container.style.transition = 'transform 0.4s';
-    imgIndex--;
-    if(imgIndex == -1)imgIndex = imgs.length - 1;
-    slide(-imgIndex*imgWidth);
+    if(imgIndex){
+        imgIndex--; 
+        
+        btnIndex--;
+        if(btnIndex == -1)
+            btnIndex = buttons.length - 1;
+        
+        for(let button of buttons)
+            button.classList.remove('gallery-circle-active');
+        buttons[btnIndex].classList.toggle('gallery-circle-active');
+    }
+    
+    console.log(buttons);
+    
+    
+    
+
+    gal_img_container.style.transition = 'transform 0.3s ease-out';
+    gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
 });
+
+gal_img_container.addEventListener('transitionend', event =>{
+    if(imgIndex == 0){
+        imgIndex = imgs.length - 2;
+        gal_img_container.style.transition = 'none';
+        gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
+    }else if(imgIndex == imgs.length - 1){
+        imgIndex = 1;
+        gal_img_container.style.transition = 'none';
+        gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
+    }
+})

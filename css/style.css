@@ -295,18 +295,22 @@ body{
 }
  
 #gallery-inner-container{
-   display: flex;
-   width: 60vw;
-   height: 70vh;
-   overflow: hidden;
-   margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#gallery-slideshow-container{
+    display: flex;
+    width: 60vw;
+    height: 70vh;
+    overflow: hidden;
+    margin: 40px auto 10px;
 }
 
 #gallery-img-container{
     display: flex;
-    width: calc(100% - 80px);
+    width: calc(100% - 120px);
     height: 100%;
-    /* border: 1px solid red; */
 }
  
 .gallery-img{
@@ -317,12 +321,41 @@ body{
 }
  
 .gallery-button{
-    width: 40px;
+    width: 60px;
+    height: 70vh;
     border: none;
     position: relative;
-    z-index: 5;
+    z-index: 10;
+    background-color: rgba(24, 15, 15, 0.918);
+    outline: none;
+    color: white;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 60px;
 }
- 
+
+#gallery-buttons-container{
+    width: 60vw;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.gallery-circle{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 100%;
+    margin: 0px 10px;
+}
+
+.gallery-circle-active{
+    background-color: blue;
+}
 
 
 #contact-main-container{
