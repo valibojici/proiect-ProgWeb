@@ -1,0 +1,107 @@
+#home-main-container{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+    margin-bottom: auto;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+#hotel-name{
+    font-size: 10rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "lato", sans-serif;
+    letter-spacing: 5px;
+
+    color : whitesmoke;
+    text-shadow: 8px 8px rgba(185, 139, 118, 0.603);
+}
+
+.book-button{
+    width: 20%;
+
+    font-size: 2rem;
+    padding: 20px;
+    margin-top: 20px;
+
+    background: rgb(199, 24, 1);
+    border-radius: 15px;
+    border-style: none;
+
+    border-right: 10px solid rgba(201, 58, 22, 0.61);
+    border-bottom: 10px solid rgba(146, 38, 11, 0.61);
+
+    font-weight: bold;
+    font-style: italic;
+    font-family: "lato", sans-serif;
+
+    letter-spacing: 3px;
+
+    color : rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+
+    animation: pulse 2s ease 0s infinite alternate-reverse;
+    position: sticky;
+    top: 30px;
+}
+
+
+.book-button:hover{
+    animation: none;
+    background: rgb(187, 22, 22);    
+}
+
+@media (max-width : 1280px) {
+    #hotel-name{
+        font-size: 7rem;
+        text-align: center;
+        text-shadow: 6px 6px rgba(185, 139, 118, 0.603);
+    }
+
+    .book-button{
+        width: 300px;
+    }
+}
+
+@media (max-width : 768px) {
+    #home-main-container{
+        position: static;
+        width: 100%;
+        margin: 0px 0px;
+        padding: 0px;
+        margin-bottom: auto;
+        margin-top: 20px;
+
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #hotel-name{
+        text-shadow: 4px 4px rgba(185, 139, 118, 0.603);
+        text-align: center;
+        font-size: 4rem;
+        margin: 30px 0;
+        margin: 10px;
+    }
+
+    .book-button{
+        width: 80%;
+        font-size: 1.6rem;
+        padding: 20px 0px;
+        background :rgba(221, 43, 20, 0.822);
+        border: none;
+        animation: none;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        /* background: rgb(179, 33, 14); */
+    }
+    100%{
+        background: rgb(155, 28, 12);
+    }
+}
