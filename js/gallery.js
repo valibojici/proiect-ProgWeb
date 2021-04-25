@@ -73,7 +73,6 @@ function moveLeft(){
 
         
     }  
-
     gal_img_container.style.transition = 'transform 0.3s ease-out';
     gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
 }
