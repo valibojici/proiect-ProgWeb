@@ -6,6 +6,10 @@ const imgWidth = gal_img_container.getBoundingClientRect().width;
 const gal_btns_container = document.getElementById('gallery-buttons-container');
 const buttons = document.getElementsByClassName('gallery-circle');
 
+var idInterval = setInterval(moveRight,2000);
+var idTimeout = null;
+var okToStartTimer = false;
+
 let imgs = []
 let imgIndex = 1;
 let btnIndex = 0;
@@ -37,7 +41,7 @@ for(let i=0; i<imgs.length - 2; ++i){
 gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
 buttons[0].classList.toggle('gallery-circle-active');
 
-rightBtn.addEventListener('click', event =>{
+function moveRight(){
     if(imgIndex < imgs.length - 1){
         imgIndex++;
 
@@ -48,13 +52,14 @@ rightBtn.addEventListener('click', event =>{
         for(let button of buttons)
             button.classList.remove('gallery-circle-active');
         buttons[btnIndex].classList.toggle('gallery-circle-active');
+
     }
         
     gal_img_container.style.transition = 'transform 0.3s ease-out';
     gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
-});
+}
 
-leftBtn.addEventListener('click', event =>{
+function moveLeft(){
     if(imgIndex){
         imgIndex--; 
         
@@ -65,16 +70,13 @@ leftBtn.addEventListener('click', event =>{
         for(let button of buttons)
             button.classList.remove('gallery-circle-active');
         buttons[btnIndex].classList.toggle('gallery-circle-active');
-    }
-    
-    console.log(buttons);
-    
-    
-    
+
+        
+    }  
 
     gal_img_container.style.transition = 'transform 0.3s ease-out';
     gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
-});
+}
 
 gal_img_container.addEventListener('transitionend', event =>{
     if(imgIndex == 0){
@@ -87,3 +89,22 @@ gal_img_container.addEventListener('transitionend', event =>{
         gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
     }
 })
+
+
+function clickMove(direction){
+    clearInterval(idInterval);
+    
+    if(idTimeout != null) clearTimeout(idTimeout);
+    
+    if(direction == 'left'){
+        moveLeft();
+    }
+    else if (direction == 'right'){
+        moveRight();
+    }
+    
+    idTimeout = setTimeout(() => {
+        clearInterval(idInterval);
+        idInterval = setInterval(moveRight, 2000);
+    }, 5000);
+}
