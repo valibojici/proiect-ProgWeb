@@ -1,72 +1,106 @@
 {
     "rooms":[
     {
-        "type" : "single",
+        "type" : "Single Room",
         "src"  : "../img/rooms/single-room.png",
-        "dates" : [],
+        "bookInfo" : [
+            {
+                "checkIn" : "2021-05-03",
+                "checkOut" : "2021-05-07",
+                "first-name" : "John",
+                "last-name" : "Smith",
+                "phone" : "555-555-555",
+                "guests" : 1
+            }
+        ],
+        "maxGuests" : 1,
+        "costPerNight" : 55,
         "id" : 1
     },
     
     {
-        "type" : "single",
+        "type" : "Single Room",
         "src"  : "../img/rooms/single-room.png",
-        "dates" : [],
+        "bookInfo" : [
+            {
+                "checkIn" : "2021-05-03",
+                "checkOut" : "2021-05-07"
+            }
+        ],
+        "maxGuests" : 1,
+        "costPerNight" : 55,
         "id" : 2
     },
 
     {
-        "type" : "queen",
+        "type" : "Queen Room",
         "src"  : "../img/rooms/queen-room.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 3,
+        "costPerNight" : 105,
         "id" : 3
     },
 
     {
-        "type" : "queen",
+        "type" : "Queen Room",
         "src"  : "../img/rooms/queen-room.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 3,
+        "costPerNight" : 105,
         "id" : 4
     },
 
     {
-        "type" : "double",
+        "type" : "Double Queen Room",
         "src"  : "../img/rooms/double-room.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 4,
+        "costPerNight" : 155,
         "id" : 5
     },
 
     {
-        "type" : "double",
+        "type" : "Double Queen Room",
         "src"  : "../img/rooms/double-room.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 4,
+        "costPerNight" : 155,
         "id" : 6
     },
 
     {
-        "type" : "king",
+        "type" : "King Room",
         "src"  : "../img/rooms/king-room.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 3,
+        "costPerNight" : 149,
         "id" : 7
     },
 
     {
-        "type" : "king",
+        "type" : "King Room",
         "src"  : "../img/rooms/king-room.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 3,
+        "costPerNight" : 149,
         "id" : 8
     },
 
     {
-        "type" : "deluxe",
+        "type" : "Deluxe King Room",
         "src"  : "../img/rooms/deluxe-king.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 3,
+        "costPerNight" : 249,
         "id" : 9
     },
 
     {
-        "type" : "deluxe",
+        "type" : "Deluxe King Room",
         "src"  : "../img/rooms/deluxe-king.png",
-        "dates" : [],
+        "bookInfo" : [],
+        "maxGuests" : 3,
+        "costPerNight" : 249,
         "id" : 10
     }
     ]

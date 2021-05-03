@@ -67,13 +67,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 60%;
+    width: 50%;
     padding: 15px 20px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    margin-bottom: 20px;
-    background:rgba(80, 60, 60, 0.87);
+    margin-bottom: 30px;
+    background:rgba(56, 43, 43, 0.842);
     box-shadow: 5px 5px 10px black;
 }
  
@@ -116,9 +116,11 @@
     background:rgba(158, 31, 29, 0.938);
     border-bottom: 5px solid rgba(73, 7, 5, 0.562);
     border-right: 5px solid rgba(167, 61, 57, 0.774);
-    width: 200px;
-    height: 60px;
-     
+    width: 25%;
+    height: 80px;
+    
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 @media (max-width : 1280px)
@@ -142,6 +144,10 @@
     #book-results-container img{
         width: 100%;
         height: 50%;
+    }
+
+    .order-room-button{
+        font-size: 1rem;
     }
 }
 
