@@ -18,4 +18,10 @@ app.get('/', (req, res)=>{
 app.listen('3000', ()=>{
     console.log('server started at: http://localhost:3000');
 });
+
+app.post('http://localhost:3000/req', (req, res)=>{
+    const info = req.body;
+    console.log(info);
+    res.send(200);
+}); 
  

@@ -1,5 +1,6 @@
-const checkInDate = document.getElementById("check-in");
+ const checkInDate = document.getElementById("check-in");
 const checkOutDate = document.getElementById("check-out");
+const button = document.getElementById('form-button');
 let today = new Date();
 
 function addDays(date, days) {
@@ -25,3 +26,20 @@ checkOutDate.addEventListener('click',function(e){
         this.setAttribute('min', getDate(addDays(new Date(checkInDate.value),1)));
         this.setAttribute('max', getDate(addDays(new Date(checkInDate.value),31)));
 })
+
+button.addEventListener('click', event=>{
+    let info = {
+        checkIn : checkInDate.value,
+        checkOut: checkOutDate.value,
+        guestNr: guests.value
+    };
+    console.log('click');
+    fetch('http://localhost:3000/req', {
+        method: 'post',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(info)
+    })
+    .then((response)=>{
+        console.log(response);
+    })
+});
