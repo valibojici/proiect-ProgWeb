@@ -17,7 +17,7 @@ checkInDate.setAttribute('max', getDate(addDays(today,40)));
 checkInDate.value = getDate(today);
 checkOutDate.value = getDate(addDays(today,1));
 
-checkInDate.addEventListener('mouseout', function(){
+checkInDate.addEventListener('change', function(){
     checkOutDate.value = getDate(addDays(new Date(checkInDate.value),1));
 })
 
