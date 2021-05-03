@@ -31,14 +31,14 @@
 }
  
 .gallery-arrow{
-    width: 60px;
+    width: 70px;
     height: 70vh;
     border: none;
     z-index: 10;
-    background-color: rgb(24, 15, 15);
+    background-color: rgba(75, 49, 33, 0.932);
     outline: none;
-    color: white;
-    
+    color: rgb(212, 212, 211);
+    padding: 5px;
     font-weight: bolder;
     font-size: 60px;
 }
@@ -63,7 +63,7 @@
 }
 
 .gallery-circle-active{
-    background-color: rgb(250, 92, 18);
+    background-color: rgb(224, 125, 44);
 }
 
 @media (max-width: 1280px) {

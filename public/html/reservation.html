@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/book.css">
+    <link rel="stylesheet" href="../css/reservation.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet"> 
     <script src='../js/reservation.js' defer></script>
@@ -23,8 +23,26 @@
                 <li><a href="../html/contact.html" class="nav-menu">Contact</a></li>
             </ul>
         </nav>
-        <div class="page-content-container" id="book-main-container">
-             
+        <div class="page-content-container" id="reservation-main-container">
+            <div id="book-info">
+                <div id="room">Room type: Double Queen Room</div>
+                <div id="guests">Guests: 3</div>
+                <div id="check-in">Check In: 2024-03-02</div>
+                <div id="check-out">Check Out:</div>
+                <div id="price">Price: 4500$</div>
+            </div>
+
+            <div id="form-container">
+                <form>
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="firstname" id="first-name" placeholder="Enter your name here" required>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="lastname" id="last-name" placeholder="Enter your name here" required>
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone here" required>
+                    <button type="submit" id="confirm-button">Confirm</button>
+                </form>
+            </div>
             
         </div>
             <footer>

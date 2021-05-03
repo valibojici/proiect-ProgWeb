@@ -1,0 +1,20 @@
+#container{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+
+margin: 200px auto;
+width: 80vw;
+height: 200px;
+text-align: center;
+font-size: 2rem;
+font-family: sans-serif;
+color: white;
+background-color: rgba(46, 40, 35, 0.788);
+}
+
+span{
+    color: rgb(233, 0, 0);
+    font-size: 2.5rem;
+    text-decoration-line: underline;
+}

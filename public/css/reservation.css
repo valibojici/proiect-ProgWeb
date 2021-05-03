@@ -1,0 +1,102 @@
+#book-info{
+    font-size: 1.6rem;
+    font-family: 'Dancing Script', cursive;
+     
+    color: white;
+    background-color: rgba(68, 51, 45, 0.877);
+    margin: 40px auto;
+    padding: 15px 0px;
+    width: 30vw;
+    height: 25vh;
+    text-align: center;
+    box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.479);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#form-container{
+    font-family: 'lato', sans-serif;
+    width: 30vw;
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.658);
+    background-color: rgba(46, 32, 27, 0.877);
+    color: white;
+}
+
+#form-container form{
+    width: 100%;
+    display: flex;
+    font-size: 1.2rem;
+     
+    flex-direction: column;
+}
+
+#form-container form > *{
+    margin-top: 20px;
+    width: 90%;
+    align-self: center;
+}
+
+#first-name, #last-name, #phone{
+    padding: 5px;
+    
+}
+ 
+#form-container form > #confirm-button{
+    margin: 30px;
+    width: 50%;
+    align-self: center;
+    padding: 20px 5px;
+    font-size: 1.4rem;
+    font-family: 'lato', sans-serif;
+    color: white;
+    background-color: rgb(110, 18, 18);
+    border: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    
+    border-right: 5px solid rgb(197, 49, 49);
+    border-bottom: 5px solid rgb(59, 14, 14);
+}
+
+@media (max-width : 1280px)
+{
+    #book-info{
+        width: 50%;
+    }
+    #form-container{
+        width: 50%;
+    }
+}
+
+@media (max-width : 768px)
+{
+    #book-info{
+        width: 95%;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    #form-container{
+        width: 95%;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
+    #form-container form > #confirm-button{
+        margin: 30px;
+        width: 90%;
+        align-self: center;
+        padding: 20px 5px;
+        font-size: 1.4rem;
+        font-family: 'lato', sans-serif;
+        color: white;
+        background-color: rgb(110, 18, 18);
+        border: none;
+        border-radius: 20px;
+    }
+    
+}

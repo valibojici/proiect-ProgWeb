@@ -1,7 +1,7 @@
 const checkInDate = document.getElementById("check-in");
 const checkOutDate = document.getElementById("check-out");
 const button = document.getElementById('form-button');
-
+const guests = document.getElementById('guests');
 const rooms = document.getElementsByClassName('book-results-inner');
 
 let today = new Date();
@@ -78,7 +78,7 @@ button.addEventListener('click', event=>{
                 let nights = rooms[i].getElementsByClassName('nights-nr')[0];
                 let bookButton = rooms[i].getElementsByClassName('order-room-button')[0]
                 
-                
+                let price = getDaysBetween(checkInDate.value, checkOutDate.value) * roomTypes[i].costPerNight
 
                 caption.textContent = roomTypes[i].type;
                 img.src = roomTypes[i].src;
@@ -87,7 +87,7 @@ button.addEventListener('click', event=>{
                 costPerNight.textContent = "Cost/Night : " + roomTypes[i].costPerNight + "$";
 
                 // \xA0 = spatiu https://stackoverflow.com/a/14302863
-                bookButton.textContent = "TOTAL:\xA0 \xA0" + (getDaysBetween(checkInDate.value, checkOutDate.value) * roomTypes[i].costPerNight) + "$";
+                bookButton.textContent = "TOTAL:\xA0 \xA0" + price + "$";
 
                 console.log(caption);
 
@@ -97,7 +97,11 @@ button.addEventListener('click', event=>{
 
                     localStorage.clear();
                     localStorage.setItem('selectedRoomId', String(roomTypes[i].id));
-                    
+                    localStorage.setItem('room', String(roomTypes[i].type));
+                    localStorage.setItem('guests', String(guests.value));
+                    localStorage.setItem('checkIn', String(checkInDate.value));
+                    localStorage.setItem('checkOut', String(checkOutDate.value));
+                    localStorage.setItem('price', String(price));
                     window.location.href = "./reservation.html";
                 });
 
