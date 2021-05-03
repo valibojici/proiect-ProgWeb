@@ -11,7 +11,7 @@ app.use(express.static('./public'));
 
 app.get('/', (req, res)=>{
     const roomsList = repo.readJSONFile();
-    console.log(roomsList);
+    
     res.sendFile('./public/html/index.html', {root : __dirname});
 });
  
