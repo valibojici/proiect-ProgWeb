@@ -1,0 +1,73 @@
+{
+    "rooms":[
+    {
+        "type" : "single",
+        "src"  : "../img/rooms/single-room.png",
+        "dates" : [],
+        "id" : 1
+    },
+    
+    {
+        "type" : "single",
+        "src"  : "../img/rooms/single-room.png",
+        "dates" : [],
+        "id" : 2
+    },
+
+    {
+        "type" : "queen",
+        "src"  : "../img/rooms/queen-room.png",
+        "dates" : [],
+        "id" : 3
+    },
+
+    {
+        "type" : "queen",
+        "src"  : "../img/rooms/queen-room.png",
+        "dates" : [],
+        "id" : 4
+    },
+
+    {
+        "type" : "double",
+        "src"  : "../img/rooms/double-room.png",
+        "dates" : [],
+        "id" : 5
+    },
+
+    {
+        "type" : "double",
+        "src"  : "../img/rooms/double-room.png",
+        "dates" : [],
+        "id" : 6
+    },
+
+    {
+        "type" : "king",
+        "src"  : "../img/rooms/king-room.png",
+        "dates" : [],
+        "id" : 7
+    },
+
+    {
+        "type" : "king",
+        "src"  : "../img/rooms/king-room.png",
+        "dates" : [],
+        "id" : 8
+    },
+
+    {
+        "type" : "deluxe",
+        "src"  : "../img/rooms/deluxe-king.png",
+        "dates" : [],
+        "id" : 9
+    },
+
+    {
+        "type" : "deluxe",
+        "src"  : "../img/rooms/deluxe-king.png",
+        "dates" : [],
+        "id" : 10
+    }
+    ]
+}
