@@ -77,6 +77,8 @@ button.addEventListener('click', event=>{
                 let costPerNight = rooms[i].getElementsByClassName('cost-per-night')[0];
                 let nights = rooms[i].getElementsByClassName('nights-nr')[0];
                 let bookButton = rooms[i].getElementsByClassName('order-room-button')[0]
+                
+                
 
                 caption.textContent = roomTypes[i].type;
                 img.src = roomTypes[i].src;
@@ -88,6 +90,17 @@ button.addEventListener('click', event=>{
                 bookButton.textContent = "TOTAL:\xA0 \xA0" + (getDaysBetween(checkInDate.value, checkOutDate.value) * roomTypes[i].costPerNight) + "$";
 
                 console.log(caption);
+
+
+
+                bookButton.addEventListener('click',event=>{
+
+                    localStorage.clear();
+                    localStorage.setItem('selectedRoomId', String(roomTypes[i].id));
+                    
+                    window.location.href = "./reservation.html";
+                });
+
             }
         }
     });

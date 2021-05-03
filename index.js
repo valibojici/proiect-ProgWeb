@@ -9,21 +9,23 @@ const roomService = require("./service/roomService");
 const app = express();
  
 app.use(express.static('./public'));
-app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({extended: false})); // pt post cu form
+app.use(bodyParser.json());
+app.use(require('./controller/roomController'));
 
 app.get('/', (req, res)=>{
-    const roomsList = repo.readJSONFile();
-    
     res.sendFile('./public/html/index.html', {root : __dirname});
 });
  
 
-app.post('/check-rates', (req, res)=>{
-    const book_info = req.body;
-    const rooms = roomService.getAvailableRoomTypes(book_info);
-    res.status(200).send({rooms});
-}); 
- 
+
+
+// app.post('/reservation',(req,res)=>{
+//     let info = req.body;
+//     console.log(info);
+//     res.sendFile('./public/html/reservation.html' ,{root : __dirname});
+//     // res.sendStatus(200);
+// });
 
 app.listen('3000', ()=>{
     console.log('server started at: http://localhost:3000');

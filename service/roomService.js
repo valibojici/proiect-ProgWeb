@@ -11,7 +11,6 @@ module.exports.getAvailableRoomTypes = (book_info) => {
     for(let room of rooms)
     {
         ok = true;
-        console.log(room);
         for(info of room.bookInfo)
         {
             if(checkIn >= info.checkIn && checkIn <= info.checkOut)
@@ -28,9 +27,10 @@ module.exports.getAvailableRoomTypes = (book_info) => {
                 type: room.type,
                 src: room.src,
                 maxGuests: room.maxGuests,
-                costPerNight: room.costPerNight
+                costPerNight: room.costPerNight,
+                id: room.id
             }
-            if(availableTypes.find(r => r.type == info.type && r.src == info.src) === undefined)
+            if(availableTypes.find(r => r.type == info.type && r.src == info.src) === undefined)    // pun doar un singur tip de camera in availableTypes
             {
                 availableTypes.push(info);
             }
@@ -38,5 +38,10 @@ module.exports.getAvailableRoomTypes = (book_info) => {
     }
 
     return availableTypes;
+}
+
+module.exports.getAllRooms = ()=>{
+    const rooms = roomRepo.readJSONFile();
+    return rooms;
 }
  
