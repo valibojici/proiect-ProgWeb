@@ -5,6 +5,7 @@ const checkOut = document.getElementById('check-out');
 const price = document.getElementById('price');
 
 let roomid = window.localStorage.getItem('selectedRoomId')
+let submitted = window.localStorage.getItem('submitted');
 
 const button = document.getElementById('confirm-button');
 const form = document.getElementsByTagName('form')[0];
@@ -14,8 +15,15 @@ guests.textContent = 'Guests: ' + window.localStorage.getItem('guests');
 checkIn.textContent = 'Check In: ' + window.localStorage.getItem('checkIn');
 checkOut.textContent = 'Check Out: ' + window.localStorage.getItem('checkOut');
 price.textContent = 'Price: ' + window.localStorage.getItem('price') + ' $';
+ 
 
-form.addEventListener('submit', event=>{
+button.addEventListener('click',event=>{
+    if(submitted != null)
+    {
+        alert('Already confirmed');
+        return;
+    }
+
     let temp = {
         roomid: roomid,
         checkIn: window.localStorage.getItem('checkIn'),
@@ -31,6 +39,8 @@ form.addEventListener('submit', event=>{
         input.value = temp[field];
         form.appendChild(input);
     }
+    submitted = true;
+    window.localStorage.setItem('submitted', 'true');
+    form.submit();
 });
- 
  

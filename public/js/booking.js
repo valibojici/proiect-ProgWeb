@@ -102,7 +102,7 @@ button.addEventListener('click', event=>{
                     localStorage.setItem('checkIn', String(checkInDate.value));
                     localStorage.setItem('checkOut', String(checkOutDate.value));
                     localStorage.setItem('price', String(price));
-                    window.location.href = "./reservation.html";
+                    window.location.replace("./reservation.html");
                 });
 
             }

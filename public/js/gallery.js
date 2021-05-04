@@ -66,6 +66,7 @@ for(let button of buttons){
         }
         button.classList.add('gallery-circle-active');
 
+        gal_img_container.style.transition = 'transform 0.3s ease-out';
         gal_img_container.style.transform = 'translateX(' + (-imgIndex * imgWidth) + 'px)';
 
         idTimeout = setTimeout(() => {

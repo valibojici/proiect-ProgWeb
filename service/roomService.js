@@ -1,5 +1,6 @@
 let roomRepo = require('../repository/roomRepository');
 let uuid = require('uuid');
+const { checkout } = require('../controller/reservationController');
 
 module.exports.getAvailableRoomTypes = (book_info) => {
     const rooms = roomRepo.readJSONFile();
@@ -43,5 +44,28 @@ module.exports.getAvailableRoomTypes = (book_info) => {
 module.exports.getAllRooms = ()=>{
     const rooms = roomRepo.readJSONFile();
     return rooms;
+}
+
+module.exports.addDateToRoom = (roomId, checkIn, checkOut)=>{
+    // adaug checkin si checkout la camera cu id-ul roomId
+
+    const rooms = roomRepo.readJSONFile();
+    console.log(roomId);
+
+    for(let i = 0;i < rooms.length;++i)
+    {
+        if(rooms[i].id == roomId)
+        {
+            console.log('gasit camera');
+            let dates = {
+                checkIn: checkIn,
+                checkOut: checkOut
+            }
+            rooms[i].bookInfo.push(dates);
+
+            roomRepo.writeJSONFile(rooms);
+            return;
+        }
+    }
 }
  
