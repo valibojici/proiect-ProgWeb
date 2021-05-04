@@ -16,8 +16,6 @@ router.post('/place-reservation', (req, res)=>{
         price: req.body.price
     };
 
-    console.log(reservation);
-
     roomService.addDateToRoom(reservation.roomid, reservation.checkIn, reservation.checkOut);
     let publicId = reservationService.addReservation(reservation);
      

@@ -16,6 +16,15 @@
     align-items: center;
 }
 
+#no-results-container{
+    width: 60%;
+    padding: 30px;
+    margin: 20px auto;
+    color: white;
+    font-family: 'lato', sans-serif;
+    background:rgba(80, 60, 60, 0.664);
+}
+
 .input-container{
     margin: 10px;
     display: flex;

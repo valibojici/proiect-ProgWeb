@@ -57,19 +57,20 @@ button.addEventListener('click', event=>{
     .then(response=>response.json())
     .then(response=>{
         let roomTypes = response.rooms;
+        let noResultsContainer = document.getElementById('no-results-container');
          
         for(let room of rooms)
         {
            room.classList.add('hide');
         }
+        noResultsContainer.classList.add('hide');
+
         if(roomTypes.length == 0)
         {
-
+            noResultsContainer.classList.remove('hide');
         }
         else
         {
-            console.log(rooms);
-
             for(let i=0;i<roomTypes.length;++i)
             {
                 rooms[i].classList.remove('hide');

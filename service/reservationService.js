@@ -1,23 +1,9 @@
 let reservationRepo = require('../repository/reservationsRepository');
 let uuid = require('uuid');
 
-function getRandomId(reservations){
-    let id;
-    let foundSameId = true;
-    while(foundSameId)
-    {
-        // genereaza nr random cu 6 cifre
-        id = Math.floor(Math.random()*900000) + 100000;
-
-        foundSameId = false;
-        for(reservation of reservations)
-            if(reservation.publicId == id)
-            {
-                foundSameId = true;
-                break;
-            }
-    }
-    return id;
+function getRandomId(){
+    let date = new Date();
+    return '' + date.getHours() + date.getMinutes() + date.getSeconds();
 }
 
 module.exports.addReservation = (info) => {
@@ -25,7 +11,7 @@ module.exports.addReservation = (info) => {
     let newReservation = info;
  
     newReservation.id = uuid.v4.apply();
-    newReservation.publicId = getRandomId(reservations);
+    newReservation.publicId = getRandomId();
 
     reservations.push(newReservation);
     reservationRepo.writeJSONFile(reservations);
