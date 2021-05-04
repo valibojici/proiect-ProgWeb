@@ -16,14 +16,44 @@ router.post('/place-reservation', (req, res)=>{
         price: req.body.price
     };
 
+    console.log(reservation);
+
     roomService.addDateToRoom(reservation.roomid, reservation.checkIn, reservation.checkOut);
     let publicId = reservationService.addReservation(reservation);
-    // to do 
-    // trebuie sa pun check in si check out in room id done
-
-    // trebuie sa adaug info in reservation.json
-    // trb sa trimit si un id unic care idetifica reservarea
+     
     res.redirect(303, '/confirmation?id='+publicId);
+});
+
+router.get('/cancel-reservation',(req,res)=>{
+    let publicId = req.query.id;
+    let phone = req.query.phone;
+ 
+    let id = reservationService.getReservationId(publicId, phone);
+     
+    if(id == null)
+    {
+        res.status(404).send({msg : 'Reservation not found.'});
+    }
+    else
+    {
+        res.status(200).send({msg : id});
+    }
+});
+
+router.delete('/reservation/:id',(req,res)=>{
+    
+    let reservation = reservationService.getReservation(req.params.id);
+    let ok = reservationService.removeReservation(req.params.id);
+    
+    if(ok)
+    {
+        roomService.removeDate(reservation.roomid, reservation.checkIn, reservation.checkOut);
+        res.status(200).send({msg: 'Reservation deleted.'});
+    }
+    else
+    {
+        res.status(404).send({msg: 'Reservation not found.'});
+    }
 });
 
 module.exports = router;      

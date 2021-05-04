@@ -1,8 +1,11 @@
+
 const checkInDate = document.getElementById("check-in");
 const checkOutDate = document.getElementById("check-out");
 const button = document.getElementById('form-button');
 const guests = document.getElementById('guests');
 const rooms = document.getElementsByClassName('book-results-inner');
+const cancelButton = document.getElementById('cancel-button');
+
 
 let today = new Date();
 
@@ -110,4 +113,49 @@ button.addEventListener('click', event=>{
     });
          
 
+});
+
+cancelButton.addEventListener('click',event=>{
+    let phone = document.getElementById('phone');
+    let resid = document.getElementById('res-id');
+    let result = document.getElementById('cancel-result');
+
+    let userInfo = {
+        phone: phone.value,
+        resid: resid.value
+    };
+
+    result.classList.remove('hide');
+    if(userInfo.phone == '' || userInfo.resid == '')
+    {
+        result.textContent = 'Please enter the information.'
+    }
+    else{
+        let p = encodeURIComponent(String(userInfo.phone));
+        let r = encodeURIComponent(String(userInfo.resid));
+        // trimit un get request cu telefonul si id-ul acela cu 6 cifre
+        fetch('/cancel-reservation?phone='+p+'&id='+r, {method: 'get'})
+        .then(response=>{
+            if(response.status == 404)
+            {
+                result.textContent = 'Reservation not found.';
+            }
+            else
+            if(response.status == 200)
+            {
+               
+                // daca e ok primesc id-ul rezervarii (uuid) si sterg rezervarea
+                response.json().then(response=>{
+                    // console.log(data.id);
+                    fetch('/reservation/'+response.msg, {method: 'delete'})
+                    .then(response=>response.json()).then(response=>{
+                        result.textContent = response.msg;
+                    });
+                });
+            }
+        });
+    }
+
+
+    
 });

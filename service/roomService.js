@@ -50,13 +50,12 @@ module.exports.addDateToRoom = (roomId, checkIn, checkOut)=>{
     // adaug checkin si checkout la camera cu id-ul roomId
 
     const rooms = roomRepo.readJSONFile();
-    console.log(roomId);
 
     for(let i = 0;i < rooms.length;++i)
     {
         if(rooms[i].id == roomId)
         {
-            console.log('gasit camera');
+             
             let dates = {
                 checkIn: checkIn,
                 checkOut: checkOut
@@ -69,3 +68,21 @@ module.exports.addDateToRoom = (roomId, checkIn, checkOut)=>{
     }
 }
  
+module.exports.removeDate = (id, checkIn, checkOut)=>{
+    const rooms = roomRepo.readJSONFile();
+
+    for(let i = 0; i < rooms.length; ++i)
+    {
+        if(rooms[i].id == id)
+        {
+            for(let j = 0; j < rooms[i].bookInfo.length; ++j)
+            {
+                if(rooms[i].bookInfo[j].checkIn == checkIn && rooms[i].bookInfo[j].checkOut == checkOut)
+                {
+                    rooms[i].bookInfo.splice(j,1);
+                    roomRepo.writeJSONFile(rooms);
+                }
+            }
+        }
+    }
+}

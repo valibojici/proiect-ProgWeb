@@ -123,6 +123,36 @@
     font-weight: bold;
 }
 
+#cancel-container{
+    width: 60%;
+    /* height: 50px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+
+    font-family: 'lato', sans-serif;
+    color: white;
+    background:rgba(53, 45, 45, 0.87);
+}
+
+#cancel-container > *{
+    margin: 5px 10px;
+}
+
+#cancel-button{
+    border: none;
+    height: 30px;
+    padding: 5px;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
+}
+
+#cancel-button:hover{
+    cursor:pointer;
+}
+
 @media (max-width : 1280px)
 {
     #book-main-container > form{
@@ -148,6 +178,13 @@
 
     .order-room-button{
         font-size: 1rem;
+    }
+
+    #cancel-container{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -206,6 +243,11 @@
         width: 100%;
         border-radius: 10px;
         border: none;
+    }
+
+    #cancel-container{
+        width: 80%;
+        
     }
 }
 
