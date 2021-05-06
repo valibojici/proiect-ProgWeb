@@ -22,9 +22,11 @@ router.post('/place-reservation', (req, res)=>{
     res.redirect(303, '/confirmation?id='+publicId);
 });
 
-router.get('/cancel-reservation',(req,res)=>{
-    let publicId = req.query.id;
-    let phone = req.query.phone;
+router.get('/cancel-reservation/:id/:phone',(req,res)=>{
+    let publicId = req.params.id;
+    let phone = req.params.phone;
+
+    console.log(publicId, phone);
  
     let id = reservationService.getReservationId(publicId, phone);
      

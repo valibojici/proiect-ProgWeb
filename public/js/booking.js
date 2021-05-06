@@ -132,10 +132,9 @@ cancelButton.addEventListener('click',event=>{
         result.textContent = 'Please enter the information.'
     }
     else{
-        let p = encodeURIComponent(String(userInfo.phone));
-        let r = encodeURIComponent(String(userInfo.resid));
-        // trimit un get request cu telefonul si id-ul acela cu 6 cifre
-        fetch('/cancel-reservation?phone='+p+'&id='+r, {method: 'get'})
+        // trimit un get request cu telefonul si id-ul ala random
+  
+        fetch('/cancel-reservation/' + userInfo.resid + '/' + userInfo.phone, {method: 'get'})
         .then(response=>{
             if(response.status == 404)
             {
