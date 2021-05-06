@@ -152,3 +152,16 @@ function clickMove(direction){
         idInterval = setInterval(moveRight, 2000);
     }, 5000);
 }
+
+window.addEventListener('keydown', event=>{
+    console.log(event.key);
+    if(event.key == 'ArrowLeft')  
+    {
+        clickMove('left');
+    }
+    else
+    if(event.key == 'ArrowRight')
+    {
+        clickMove('right');
+    }
+})

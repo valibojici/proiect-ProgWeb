@@ -9,6 +9,7 @@ let submitted = window.localStorage.getItem('submitted');
 
 const button = document.getElementById('confirm-button');
 const form = document.getElementsByTagName('form')[0];
+const inputs = form.getElementsByTagName('input');
 
 room.textContent = 'Room type: ' + window.localStorage.getItem('room');
 guests.textContent = 'Guests: ' + window.localStorage.getItem('guests');
@@ -22,6 +23,15 @@ button.addEventListener('click',event=>{
     {
         alert('Already confirmed');
         return;
+    }
+
+    for(let input of inputs)
+    {
+        if(input.value == '')
+        {
+            alert("Please fill in all fields");
+            return;
+        }
     }
 
     let temp = {
@@ -41,6 +51,7 @@ button.addEventListener('click',event=>{
     }
     submitted = true;
     window.localStorage.setItem('submitted', 'true');
+
     form.submit();
 });
  

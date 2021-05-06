@@ -2,11 +2,9 @@ let roomRepo = require('../repository/roomRepository');
 let uuid = require('uuid');
 const { checkout } = require('../controller/reservationController');
 
-module.exports.getAvailableRoomTypes = (book_info) => {
+module.exports.getAvailableRoomTypes = (checkIn, checkOut, guests) => {
     const rooms = roomRepo.readJSONFile();
-    let checkIn = book_info.checkIn;
-    let checkOut = book_info.checkOut;
-    let guestNr = book_info.guestNr;
+ 
     let availableTypes = [];
     
     for(let room of rooms)
@@ -20,7 +18,7 @@ module.exports.getAvailableRoomTypes = (book_info) => {
                 ok = false;
         }
         
-        if(room.maxGuests < guestNr)ok = false;
+        if(room.maxGuests < guests)ok = false;
 
         if(ok)
         {
@@ -31,13 +29,13 @@ module.exports.getAvailableRoomTypes = (book_info) => {
                 costPerNight: room.costPerNight,
                 id: room.id
             }
-            if(availableTypes.find(r => r.type == info.type && r.src == info.src) === undefined)    // pun doar un singur tip de camera in availableTypes
+
+            if(availableTypes.find(r => r.type == info.type) === undefined)    // pun doar un singur tip de camera in availableTypes
             {
                 availableTypes.push(info);
             }
         }
     }
-
     return availableTypes;
 }
 
