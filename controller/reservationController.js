@@ -25,8 +25,6 @@ router.post('/place-reservation', (req, res)=>{
 router.get('/cancel-reservation/:id/:phone',(req,res)=>{
     let publicId = req.params.id;
     let phone = req.params.phone;
-
-    console.log(publicId, phone);
  
     let id = reservationService.getReservationId(publicId, phone);
      
