@@ -3,12 +3,7 @@
     {
       "type": "Single Room",
       "src": "../img/rooms/single-room.png",
-      "bookInfo": [
-        {
-          "checkIn": "2021-05-09",
-          "checkOut": "2021-05-10"
-        }
-      ],
+      "bookInfo": [],
       "maxGuests": 1,
       "costPerNight": 55,
       "id": 1
