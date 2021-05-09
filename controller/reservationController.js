@@ -54,4 +54,9 @@ router.delete('/reservation/:id',(req,res)=>{
     }
 });
 
+
+router.get('/confirmation', (req,res)=>{
+    res.sendFile('public/html/confirmation.html', {root : './'});
+});
+
 module.exports = router;      

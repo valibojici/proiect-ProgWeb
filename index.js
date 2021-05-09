@@ -1,7 +1,5 @@
 const express = require("express");
-const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const uuid = require("uuid");
  
 const roomRepo = require("./repository/roomRepository");
@@ -16,11 +14,6 @@ app.use(require('./controller/reservationController'));
 
 app.get('/', (req, res)=>{
     res.sendFile('./public/html/index.html', {root : __dirname});
-});
- 
-
-app.get('/confirmation', (req,res)=>{
-    res.sendFile('./public/html/confirmation.html', {root : __dirname});
 });
 
 
